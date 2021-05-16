@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="roverCuriosityModel"
+            type="com.merveoktay.nasamars.RoverModel" />
+
+        <variable
+            name="roverSpiritModel"
+            type="com.merveoktay.nasamars.RoverModel" />
+
+        <variable
+            name="roverOpportunityModel"
+            type="com.merveoktay.nasamars.RoverModel" />
+        
+        <variable
+            name="screenWidth"
+            type="java.lang.Integer" />
+        
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context=".MainActivity"
+        tools:visibility="visible">
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <com.merveoktay.nasamars.Rover
+                    android:id="@+id/roverCuriosity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:roverModel="@{roverCuriosityModel}"
+                    app:screenWidth="@{screenWidth}"
+
+                    />
+
+                <com.merveoktay.nasamars.Rover
+                    android:id="@+id/roverSpirit"
+                    android:layout_width="410dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:roverModel="@{roverSpiritModel}"
+                    app:screenWidth="@{screenWidth}"/>
+
+                <com.merveoktay.nasamars.Rover
+                    android:id="@+id/roverOpportunity"
+                    android:layout_width="410dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:roverModel="@{roverOpportunityModel}"
+                    app:screenWidth="@{screenWidth}"
+                    />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
